@@ -1,6 +1,24 @@
 import streamlit as st  # pip install streamlit
 
-st.header(":mailbox: Get In Touch With Me!")
+left_column, center_column, right_column = st.columns([1,2,1])
+
+with left_column:
+    
+    geo = ["GeoH2.jpg"]
+    
+    st.image(geo,width=150)
+
+with center_column:
+
+    st.markdown("<h1 style='text-align: center; color: blue;'> Get In Touch With Us! </h1>", unsafe_allow_html=True)
+    
+with right_column:
+    
+    starr = ["Starr_logo_280.png"]
+    
+    st.image(starr,width=500)
+
+
 
 
 contact_form = """
@@ -12,6 +30,17 @@ contact_form = """
      <button type="submit">Send</button>
 </form>
 """
+
+with st.container():
+    
+    st.write("---")
+    
+    left_column, center_column, right_column = st.columns([1,2,1])
+
+    with left_column:
+
+
+        st.markdown(contact_form, unsafe_allow_html=True)
 
 st.markdown(contact_form, unsafe_allow_html=True)
 
